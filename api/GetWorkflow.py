@@ -38,8 +38,11 @@ class ServiceClient:
         # Definir o valor do cabeçalho
         header_value = self.header(Action=self.method_url, To=self.service_url)
 
-        # Fazer a chamada ao serviço SOAP
-        response = self.client.service.getWorkflow(
+        """ Fazer a chamada ao serviço SOAP -
+        client.service.cancelWorkflo -> método definido como cancelWorkflow atribui ao valor passado ao name da requisição 
+        a ser efetuada -->  <operation name="cancelWorkflow">
+        """
+        response = self.client.service.cancelWorkflow(
             _soapheaders=[header_value],
             **param
         )

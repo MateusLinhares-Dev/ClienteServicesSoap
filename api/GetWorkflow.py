@@ -34,14 +34,14 @@ class ServiceClient:
             ),
         )
 
-    def call_service(self, workflow_id):
+    def call_service(self, **param):
         # Definir o valor do cabeçalho
         header_value = self.header(Action=self.method_url, To=self.service_url)
 
         # Fazer a chamada ao serviço SOAP
         response = self.client.service.getWorkflow(
-            WorkflowID=workflow_id,
-            _soapheaders=[header_value]
+            _soapheaders=[header_value],
+            **param
         )
         return response
 

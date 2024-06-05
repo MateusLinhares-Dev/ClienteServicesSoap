@@ -25,6 +25,12 @@ client = ServiceClient(wsdl_url=wsdl_url, service_url=service_url, method_url=me
 
 # ID do workflow
 workflow_id = os.getenv('workflow_id')
-response = client.call_service(workflow_id=workflow_id)
+
+#Identificadores e valores para requisição soap
+values = {
+    "WorkflowID":workflow_id,
+}
+
+response = client.call_service(**values)
 
 print(response)

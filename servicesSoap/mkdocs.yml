@@ -1,4 +1,4 @@
-site_name: ServiceSOAP Documentation
+site_name: ServiceSOAP Documentation Version 1.0
 nav:
   - Home: index.md
   - API:
